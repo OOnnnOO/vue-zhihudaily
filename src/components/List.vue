@@ -24,14 +24,20 @@
         ]
       }
     },
-    created: function () {
-      this.$http.get("//zhihudaily.p.oonnnoo.com" + "/api/4/news/latest")
-        .then(function (response) {
-          this.stories = response.data.stories;
-          // console.log(response.data)
-        }, function (err) {
-          console.log(err);
-        });
+    methods: {
+      fetchData: function () {
+        this.$http.get("//zhihudaily.p.oonnnoo.com" + "/api/4/news/latest")
+          .then((response) => {
+            console.log(response.data.stories)
+            this.stories = response.data.stories;
+          })
+          .catch(function (err) {
+            console.log(err)
+          });
+      }
+    },
+    created() {
+      this.fetchData();
     }
   }
 </script>

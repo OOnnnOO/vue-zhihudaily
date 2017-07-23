@@ -18,10 +18,11 @@
     methods: {
       fetchData: function () {
         this.$http.get("//zhihudaily.p.oonnnoo.com" + "/api/4/news/" + this.$route.params.id)
-          .then(function (response) {
+          .then((response) => {
             this.detail = response.data;
             console.log(response.data);
-          }, function (err) {
+          })
+          .catch((err) => {
             console.log(err);
           })
       }
