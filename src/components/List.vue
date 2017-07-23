@@ -25,7 +25,7 @@
       }
     },
     created: function () {
-      this.$http.get("https://zhihudaily.p.lidong.me" + "/api/4/news/latest")
+      this.$http.get("//zhihudaily.p.oonnnoo.com" + "/api/4/news/latest")
         .then(function (response) {
           this.stories = response.data.stories;
           // console.log(response.data)
